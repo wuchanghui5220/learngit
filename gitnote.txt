@@ -22,4 +22,6 @@ git diff --cached <file>	# 暂存区文件与仓库文件对比
 git restore --staged <file>	# unstage, 撤销上一次add/stage操作,版本回退
 git restore <file>		# 放弃工作区的修改，或者说将工作区的文件恢复为暂存区的版本
 
-
+git remote add origin git@github.com:wuchanghui5220/learngit.git # 在自己的GitHub创建远程仓库learngit，与本地仓库关联。
+git push -u origin master	# 把本地库的内容推送到远程库，并关联。
+git push origin master		# 此后，要推送本地库，就使用此命令。
