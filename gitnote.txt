@@ -17,7 +17,7 @@ git reset HEAD^^		# 恢复到上上一个版本
 
 git diff <file>			# 工作区文件与暂存区文件对比
 git diff HEAD <file>		# 工作区文件与仓库文件对比
-git diff --cached <file>	# 暂存区文件与仓库对比
+git diff --cached <file>	# 暂存区文件与仓库文件对比
 
 git restore --staged <file>	# unstage, 撤销上一次add/stage操作,版本回退
 git restore <file>		# 放弃工作区的修改，或者说将工作区的文件恢复为暂存区的版本
