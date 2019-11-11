@@ -1,0 +1,25 @@
+git note
+2019/11/11
+
+git add/stage <file>		# 添加文件到stage暂存区
+git commit <file>		# 提交stage暂存区文件到branch master仓库或者叫版本库
+git commit -m "discribe the changes"	# 提交文件，并描述变更。
+
+git status			# 查看仓库当前状态
+git log				# 查看提交日志
+git log --pretty=oneline	# 一行一条的方式显示提交的日志
+git reflog			# 查看历史操作记录，主要是查看commit id
+
+git reset --hard <commit id>	# 恢复到指定commit id的版本，id写前7位即可
+git reset --hard HEAD		# unstage, 回退到上一个版本
+git reset HEAD^			# 恢复到上一个版本
+git reset HEAD^^		# 恢复到上上一个版本
+
+git diff <file>			# 工作区文件与暂存区文件对比
+git diff HEAD <file>		# 工作区文件与仓库文件对比
+git diff --cached <file>	# 暂存区文件与仓库对比
+
+git restore --staged <file>	# unstage, 撤销上一次add/stage操作,版本回退
+git restore <file>		# 放弃工作区的修改，或者说将工作区的文件恢复为暂存区的版本
+
+
