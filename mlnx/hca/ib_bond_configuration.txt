@@ -1,0 +1,39 @@
+[root@sinoinfo-bbs ~]# cat /etc/sysconfig/network-scripts/ifcfg-bond0
+DEVICE=bond0
+IPADDR=10.10.10.200
+NETWORK=10.10.10.0
+NETMASK=255.255.255.0
+BROADCAST=10.10.10.255
+USERCTL=no
+BOOTPROTO=none
+ONBOOT=yes
+NM_CONTROLLED=yes
+BONDING_OPTS="mode=active-backup primary=ib0 miimon=100"
+MTU=2044
+
+[root@sinoinfo-bbs ~]# cat /etc/sysconfig/network-scripts/ifcfg-ib0
+DEVICE=ib0
+TYPE=InfiniBand
+NM_CONTROLLED=yes
+ONBOOT=yes
+USERCTL=no
+MASTER=bond0
+SLAVE=yes
+BOOTPROTO=none
+PRIMARY=yes
+
+[root@sinoinfo-bbs ~]# cat /etc/sysconfig/network-scripts/ifcfg-ib1
+DEVICE=ib1
+TYPE=InfiniBand
+NM_CONTROLLED=yes
+ONBOOT=yes
+USERCTL=no
+MASTER=bond0
+SLAVE=yes
+BOOTPROTO=none
+PRIMARY=no
+
+[root@sinoinfo-bbs ~]# cat /etc/modprobe.d/bond.conf
+alias bond0 bonding # Adapter bonding driver
+options bond0 miimon=100 mode=1 # 100ms fail-over timer. Mode 1 = Active/Backup
+
