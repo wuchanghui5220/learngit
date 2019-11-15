@@ -25,3 +25,23 @@ git restore <file>		# 放弃工作区的修改，或者说将工作区的文件�
 git remote add origin git@github.com:wuchanghui5220/learngit.git # 在自己的GitHub创建远程仓库learngit，与本地仓库关联。
 git push -u origin master	# 把本地库的内容推送到远程库，并关联。
 git push origin master		# 此后，要推送本地库，就使用此命令。
+
+# 克隆
+git clone git@github.com:wuchanghui5220/gitskills.git
+
+git checkout -b dev		# -b 参数表示创建并切换
+git branch dev			# 创建分支dev
+git checkout dev		# 切换到dev分支
+
+git switch -c dev		# -c 参数表示创建并切换
+git switch dev			# 切换到dev分支
+
+
+git branch			# 查看当前分支
+
+git checkout master		# 切换到主分支
+git merge dev			# 把dev分支合并到主分支
+git branch -d dev		# 删除dev分支
+
+
+
