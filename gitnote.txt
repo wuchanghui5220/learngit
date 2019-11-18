@@ -52,5 +52,14 @@ git log --graph --pretty=oneline --abbrev-commit # 查看分支的合并情况
 git merge --no-ff		# --no-ff 表示禁用Fast forward，采用普通合并，每一次合并的记录都会保存
 
 git stash			# 存储工作区
+git stash apply 		# 恢复到工作区
+git stash drop			# 删除stash
 
+git stash pop			# 恢复到工作区并删除stash
 
+git cherry-pick <commit id>	# 把修复bug的操作在分支上自动修复
+
+# 把工作区储藏起来后，工作区就是干净的。此时可以创建临时分支来处理bug或者其它修改，也可以直接修改主分支，
+# 1、如果直接修改master分支的内容或者bug，修改好之后。恢复到工作区写代码，删除stash，此时无法cherry-pick，需要 "git add" and/or "git commit -a" ，然后cherry-pick
+
+#2、创建新的临时分支来修复bug，
