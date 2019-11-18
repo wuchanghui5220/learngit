@@ -48,3 +48,9 @@ git branch -d dev		# 删除dev分支
 
 git log --graph --pretty=oneline --abbrev-commit # 查看分支的合并情况
 # 合并分支，产生冲突，在master分支修改后合并，只是主分支保持最新。分支的内容还是之前版本，并没有被修改
+
+git merge --no-ff		# --no-ff 表示禁用Fast forward，采用普通合并，每一次合并的记录都会保存
+
+git stash			# 存储工作区
+
+
