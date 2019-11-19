@@ -62,4 +62,15 @@ git cherry-pick <commit id>	# 把修复bug的操作在分支上自动修复
 # 把工作区储藏起来后，工作区就是干净的。此时可以创建临时分支来处理bug或者其它修改，也可以直接修改主分支，
 # 1、如果直接修改master分支的内容或者bug，修改好之后。恢复到工作区写代码，删除stash，此时无法cherry-pick，需要 "git add" and/or "git commit -a" ，然后cherry-pick
 
-#2、创建新的临时分支来修复bug，
+#2、到主分区创建新的临时分支来修复bug，修改好后，add 和 commit ，回到主分区，开始合并
+#  git merge --no-ff -m "merged bug fix 01 well done" fix-bug-01
+# 在分支cherry-pick commit id，即可自动修复bug，在此之前必须add 和commit，否则报错。
+
+# 3 新增文件stash操作步骤，add 文件到暂存区就可以 stash了。到主分区创建临时分支修复bug，修改好后，add 和 commint，记住commit id，回到主分支，合并
+# git merge --no-ff -m "merge bug fix 02 add See you" fix-bug-02
+# 在cherry-pick之前也是要add 和 commit 新文件
+
+# Feature 分支，分支上开发新功能，add和commint之后，突然又不要合并，而且还要销毁
+# 使用 git branch -d feature01 是不成功的，没有合并的文件要删除必须使用 -D参数
+
+
