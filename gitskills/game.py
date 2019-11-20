@@ -10,12 +10,13 @@ while c > 0:
 	elif number < a:
 		print("Too small")
 	else:
-		print("Yes, you did it")
+		print("Well done, you did it")
 		break
 	c -= 1
 	print("You have " + str(c) + " chances left. ")
-print("Have Fun")
+print("Have Fun, See you!")
 
 print("^_^" * 3)
 
 # This game is Fun.
+print("Today is a good day")
