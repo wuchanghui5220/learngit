@@ -26,6 +26,10 @@ git remote add origin git@github.com:wuchanghui5220/learngit.git # 在自己的G
 git push -u origin master	# 把本地库的内容推送到远程库，并关联。
 git push origin master		# 此后，要推送本地库，就使用此命令。
 
+# 在其它设备创建和关联远程库
+git config --global user.email wuchanghui5220@gmail.com
+git config -l
+
 # 克隆
 git clone git@github.com:wuchanghui5220/gitskills.git
 
@@ -73,4 +77,13 @@ git cherry-pick <commit id>	# 把修复bug的操作在分支上自动修复
 # Feature 分支，分支上开发新功能，add和commint之后，突然又不要合并，而且还要销毁
 # 使用 git branch -d feature01 是不成功的，没有合并的文件要删除必须使用 -D参数
 
+git remote -v			# 查看远程库信息
+# 本地新建的分支如果不推送到远程，对其他人就是不可见的；
+# 从本地推送分支，使用git push origin branch-name，如果推送失败，先用git pull抓取远程的新提交；
+# 在本地创建和远程分支对应的分支，使用git checkout -b branch-name origin/branch-name，本地和远程分支的名称最好一致；
+#建立本地分支和远程分支的关联，使用git branch --set-upstream branch-name origin/branch-name；
+#从远程抓取分支，使用git pull，如果有冲突，要先处理冲突。
+git push origin dev		# 把本地分支dev推送到远程库
 
+# 多人协作
+# 
