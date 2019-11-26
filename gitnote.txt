@@ -86,4 +86,10 @@ git remote -v			# 查看远程库信息
 git push origin dev		# 把本地分支dev推送到远程库
 
 # 多人协作
-# 
+# 合作伙伴或者其它开发者与你同时开发dev分支
+git checkou -b dev origin/dev	#创建远程分支，然后修改文件并add和commit，最后push到 远程库 git push origin dev
+# 此时你也修改好了同一个文件add并commit，但是push报错，
+# 现在，你可以pull，但又失败了，你的dev和origin/dev没有关联
+git branch --set-upstream-to=origin/dev dev
+#再pull，然后提交，如果在相同的行修改了内容，合并有冲突，需要手动解决。
+# 最好是每次都pull到本地，再修改或者添加内容
